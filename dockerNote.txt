@@ -4,3 +4,6 @@ docker-compose down -v
 
 docker volume create <volume_name>
 docker volume rm my_volume
+
+
+export DATABASE_URL=postgres://root:root@localhost:5432/postgres

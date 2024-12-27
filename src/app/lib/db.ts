@@ -1,13 +1,8 @@
-import { drizzle } from 'drizzle-orm/node-postgres';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
 
-const db = drizzle(process.env.DATABASE_URL!);
- 
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) throw new Error('DATABASE_URL is not defined');
 
-export async function testDbConnection() {
-    try {
-      const result = await db.execute('select 1');
-      console.log('Database connection test successful:', result);
-    } catch (error) {
-      console.error('Database connection test failed:', error);
-    }
-  }
+export const client = postgres(connectionString);
+export const db = drizzle(client);

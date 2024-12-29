@@ -9,7 +9,7 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
     "db:run": "node -r esbuild-register ./migrate.ts",
-    "studio":"npx drizzle-kit studio"
+    "studio": "npx drizzle-kit studio"
   },
   "dependencies": {
     "drizzle-orm": "^0.38.3",
@@ -17,7 +17,8 @@
     "pg": "^8.13.1",
     "postgres": "^3.4.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

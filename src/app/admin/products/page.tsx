@@ -12,7 +12,11 @@ import { Loader2 } from "lucide-react";
 
 const ProductsPage = () => {
   const { onOpen } = useNewProduct();
-  const { data: products, isLoading } = useQuery<Product[]>({
+  const {
+    data: products,
+    isLoading,
+    isError,
+  } = useQuery<Product[]>({
     queryKey: ["products"],
     queryFn: getAllProducts,
   });
@@ -26,6 +30,7 @@ const ProductsPage = () => {
         </Button>
         <ProductSheet />
       </div>
+      {isError && <span className="text-red-500">Something went wrong.</span>}
       {isLoading ? (
         <div className="flex items-center justify-center">
           <Loader2 className="size-10 animate-spin" />

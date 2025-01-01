@@ -6,9 +6,9 @@ import { getAllWarehouses } from "@/http/api";
 import { Product } from "@/types";
 import { Loader2 } from "lucide-react";
 import { useNewWarehouse } from "@/store/warehouse-store";
-import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import WarehouseSheet from "./warehouse-sheet";
+import { DataTable } from "../_components/data-table";
 const WarehousesPage = () => {
   const { onOpen } = useNewWarehouse();
 

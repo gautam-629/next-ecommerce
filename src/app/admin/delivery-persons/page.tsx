@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import { DataTable } from "./data-table";
 import { useQuery } from "@tanstack/react-query";
 import { getAllDeliveryPersons } from "@/http/api";
 import { Product } from "@/types";
@@ -9,6 +8,7 @@ import { Loader2 } from "lucide-react";
 import { useNewDeliveryPerson } from "@/store/delivery-person-store";
 import { columns } from "./columns";
 import DeliveryPersonSheet from "./delivery-person-sheet";
+import { DataTable } from "../_components/data-table";
 const DeliveryPersonsPage = () => {
   const { onOpen } = useNewDeliveryPerson();
   const {

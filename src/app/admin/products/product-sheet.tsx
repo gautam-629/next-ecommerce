@@ -16,7 +16,7 @@ const ProductSheet = () => {
   const queryClient = useQueryClient();
   const { toast } = useToast();
   const { mutate, isPending } = useMutation({
-    mutationKey: ["create-product"],
+    mutationKey: ["products"],
     mutationFn: (data: FormData) => createProduct(data),
     onSuccess: () => {
       onClose();

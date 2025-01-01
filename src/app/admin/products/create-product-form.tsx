@@ -14,11 +14,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { productSchema } from "@/app/lib/validators/productSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
 export type FormValues = z.input<typeof productSchema>;
 const CreateProductForm = ({
   onSubmit,
+  disabled,
 }: {
   onSubmit: (formValus: FormValues) => void;
+  disabled: boolean;
 }) => {
   const form = useForm<z.infer<typeof productSchema>>({
     resolver: zodResolver(productSchema),
@@ -94,7 +97,9 @@ const CreateProductForm = ({
             </FormItem>
           )}
         />
-        <Button className="w-full">Create</Button>
+        <Button className="w-full">
+          {disabled ? <Loader2 className="size-4 animate-spin" /> : "Create"}
+        </Button>
       </form>
     </Form>
   );
